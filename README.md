@@ -29,11 +29,9 @@
 Front-end app:
 - React + TypeScript
 - Tailwind CSS
-- 
 
 Back-end app:
 - FastAPI + uvicorn (python)
-- 
 
 CI/CD:
 - Docker
@@ -85,12 +83,12 @@ Here is a little summary of each column:
 
 ## Branch naming convention
 
-Code Flow Branches :
+Code Flow Branches:
 - `main`: prod
-- `staging` : preprod (ready)
-- `dev` : development
+- `staging`: preprod (ready)
+- `dev`: development
 
-Temporary Branches :
+Temporary Branches:
 - `feature/xxx`: any code change, must be related to an issue
 
 ## Commit convention
@@ -106,7 +104,7 @@ The format will be the following:
 <footer>
 ```
 
-Each line must be less than 100 characters,
+Each line must be less than 100 characters.
 
 The footer should contain a closing reference to an issue if any.
 
@@ -119,7 +117,7 @@ The types we'll likely use are:
 - fix
 - docs
 
-Here is an exemple :
+Here is an example:
 ```
 feat(auth): Added user login page feature
 
@@ -130,7 +128,7 @@ Closed issue #10000
 
 # Team member
 
-- ANNEN Rayane : Product owner 
-- DUCOMMUN Hugo : Scrum Master 
-- MARTINS Alexis
-- SAEZ Pablo
+- ANNEN Rayane: Product owner, frontend developer
+- DUCOMMUN Hugo: Scrum Master, frontend developer
+- MARTINS Alexis, Backend developer
+- SAEZ Pablo, Backend developer
