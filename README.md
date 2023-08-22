@@ -54,6 +54,14 @@ CI/CD:
 
 # Architecture 
 
+![App's architecture](img/architecture.png)
+
+The client side is a web server hosted on Netlify. We have two environments on Netlify, one for pre-production (duckpass.ch) and the production one (duckpass.ch).
+
+It's an application built using React and TypeScript, primarily allowing the user to access their data, and also enabling us to secure the data before it's sent to the server.
+
+The user's encrypted information is sent to the API through a secure channel. The endpoint that retrieves the data will send it to another part of the Python code, which then stores it in the PostgreSQL database.
+
 # Project Management
 
 - Scrum
