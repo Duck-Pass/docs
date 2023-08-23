@@ -39,18 +39,24 @@ Armed with features like generating highly secure passwords, DuckPass is a robus
 
 # Technologies
 
-Front-end app:
+Frontend app:
 - React + TypeScript
 - Tailwind CSS
 
-Back-end app:
+Backend app:
 - FastAPI + uvicorn (python)
+- Gunicorn (Python web server WSGI)
 
 CI/CD:
 - Docker
 - GitHub Actions
 - TypeScript testing framework: Jest
 - Python testing framework: pytest
+- Hosting on Heroku for the backend
+- Hosting on Netlify for the frontend
+
+Domain :
+- Cloudflare
 
 # Architecture 
 
@@ -60,7 +66,7 @@ The client side is a web server hosted on Netlify. We have two environments on N
 
 It's an application built using React and TypeScript, primarily allowing the user to access their data, and also enabling us to secure the data before it's sent to the server.
 
-The user's encrypted information is sent to the API through a secure channel. The endpoint that retrieves the data will send it to another part of the Python code, which then stores it in the PostgreSQL database.
+The user's encrypted information is sent to the API (hosted on Heroku) through a secure channel. The endpoint that retrieves the data will send it to another part of the Python code, which then stores it in the PostgreSQL database.
 
 # Project Management
 
@@ -112,9 +118,13 @@ Code Flow Branches:
 Temporary Branches:
 - `feature/xxx`: any code change, must be related to an issue
 
+Here is a little summary how to deal with them :
+
+![Branch dev diagram](./img/branch-dev-diagram.png)
+
 ## Commit convention
 
-We'll follow the (Angular Commit Convention)[https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines] for commit messages:
+We'll follow the [Angular Commit Convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) for commit messages:
 
 The format will be the following:
 ```
@@ -146,6 +156,20 @@ Bla bla bla
 
 Closed issue #10000
 ```
+
+# CI/CD
+
+DuckPass is built with two different environments : production and staging.
+
+The staging environment is only used by the Product Owner to review the final result of the modifications. If the modifications are accepted the code is pushed onto the `main` branch (prod).
+
+Here is a little diagram of the CI/CD pipeline :
+
+![CI-CD Diagram](./img/ci-cd-diagram.png)
+
+The CI workflow is powered by GitHub Actions available on each repository which will in fact just run a `npm run test`.
+
+The continuous deployment is managed by Netlify and Heroku portals directly linked to the repositories.
 
 # Team member
 
