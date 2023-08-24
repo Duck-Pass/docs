@@ -33,9 +33,24 @@ Armed with features like generating highly secure passwords, DuckPass is a robus
 
 # Non-functional requirements
 
-- End-to-end encryption
-- Zero-knowledge encryption
+- Application usage: 
+    - The application must not be usable if the user is not logged in. They will be redirected to the home page, the login page and the account creation page.
+    - When the account is created, the application must check that the password contains at least 8 characters and complies with at least 3 of the 4 following constraints: Use lower case, upper case, numbers and special characters.
 
+- End-To-End Encryption (E2EE):
+  - The data is encrypted from the moment the user enters it and throughout the process until it is stored on the server. On the server, the data remains encrypted until it returns to the user's device, where it is decrypted locally.
+
+- Zero-Knowledge:
+  - If users control the encryption key, they control access to the data and can provide encrypted data to the password manager without the password management company having access to the data and being able to query it.
+
+- Transparency:
+  - As an open-source project, we have to be totally transparent with users. They need to know the infrastructure through which their data passes, as well as all the code used by the application. In this way, DuckPass will be easy to audit and you will be able to check the underlying security measures for yourself.
+
+- Privacy:
+  - User data and activities should be kept private and not be accessible to unauthorized parties. This involves strict adherence to data protection regulations and user consent for data handling.
+
+- Usability:
+  - The user interface should be intuitive and user-friendly, requiring minimal training for users to effectively navigate and utilize the application's features.
 
 # Technologies
 
