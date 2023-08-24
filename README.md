@@ -1,4 +1,6 @@
-![DuckPass](/img/ducky.png)
+<p align="center">
+  <img src="img/ducky.png" alt="ducky" width="300" />
+</p>
 
 # Project description
 
@@ -28,14 +30,12 @@ Armed with features like generating highly secure passwords, DuckPass is a robus
 - Remove logins from the vault
 - Vault timeout: after n minutes of inactivity the vault become blocked and encrypted
 - Generate secure password
-- Store notes securely
-- (FIDO2?)
 
 # Non-functional requirements
 
 - Application usage: 
-    - The application must not be usable if the user is not logged in. They will be redirected to the home page, the login page and the account creation page.
-    - When the account is created, the application must check that the password contains at least 8 characters and complies with at least 3 of the 4 following constraints: Use lower case, upper case, numbers and special characters.
+  - The application must not be usable if the user is not logged in. They will be redirected to the home page, the login page and the account creation page.
+  - When the account is created, the application must check that the password contains at least 8 characters and complies with at least 3 of the 4 following constraints: Use lower case, upper case, numbers and special characters.
 
 - End-To-End Encryption (E2EE):
   - The data is encrypted from the moment the user enters it and throughout the process until it is stored on the server. On the server, the data remains encrypted until it returns to the user's device, where it is decrypted locally.
@@ -77,11 +77,13 @@ Domain :
 
 ![App's architecture](img/architecture.png)
 
-The client side is a web server hosted on Netlify. We have two environments on Netlify, one for pre-production (duckpass.ch) and the production one (duckpass.ch).
+The web client is hosted on Netlify. We have two environments on Netlify, one for preproduction: https://staging.duckpass.ch and one for the production: https://duckpass.ch.
 
-It's an application built using React and TypeScript, primarily allowing the user to access their data, and also enabling us to secure the data before it's sent to the server.
+The application is built using Vite + React and Typescript, this main purpose of the application is to enable the user to decrypt or encrypt their data and access them. 
 
-The user's encrypted information is sent to the API (hosted on Heroku) through a secure channel. The endpoint that retrieves the data will send it to another part of the Python code, which then stores it in the PostgreSQL database.
+The server application never knows which data it is sending or receiving as everything is always encrypted by the web client.
+
+Precisely, The user's encrypted information is sent to the API (hosted on Heroku) through a secure channel (HTTPS). The endpoint that retrieves the data will then process the data and store it in the database (PostgreSQL).
 
 # Project Management
 
