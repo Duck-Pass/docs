@@ -110,9 +110,9 @@ The scrum-related kanban will be implemented with GitHub Project linked to the o
 Here is a little summary of each column:
 
     - Product backlog: tasks to be done by the end of the project's deadline
-    - Sprint backlog: tasks to be done by the sprint
+    - Sprint backlog: tasks to be done by the sprint's end
     - In progress: tasks currently being done
-    - Testing: tasks potentially finished but still need to be test
+    - Testing: tasks potentially finished but still need to be tested
     - In review: tasks that need to be accepted by the Product Owner
     - Ready : tasks totally finished on the pre-prod env and accepted but need to be deployed on prod
     - Deployed: tasks deployed, accepted and tested on production
