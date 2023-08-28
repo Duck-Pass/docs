@@ -23,13 +23,18 @@ Armed with features like generating highly secure passwords, DuckPass is a robus
 - Sign in
 - Sign up
 - Login
+- Account deletion
+- Indicator of the strength of the master password
+- User profile page to view and edit information
 - Password forgotten
 - 2FA login
+- 2FA manager for other apps
 - Search logins
 - Add username/password securely in the vault
 - Remove logins from the vault
-- Vault timeout: after n minutes of inactivity the vault become blocked and encrypted
-- Generate secure password
+- Purge vault
+- Password generator
+- Integration of breached password search
 
 # Non-functional requirements
 
