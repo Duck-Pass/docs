@@ -137,7 +137,7 @@ Temporary Branches:
 
 Here is a little summary how to deal with them :
 
-![Branch dev diagram](./img/branch-dev-diagram.png)
+![Branch dev diagram](./img/branch-dev-diagram.jpg)
 
 ## Commit convention
 
