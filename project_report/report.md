@@ -5,8 +5,8 @@ date: "05.09.2023"
 subtitle: "Projet de groupe"
 lang: "en"
 titlepage: true
-titlepage-logo: ./figures/HEIG-Logo.png
-titlepage-rule-color: "DA291C"
+titlepage-logo: ./figures/DUCKY-Logo.png
+titlepage-rule-color: "022837"
 toc: true
 toc-own-page: true
 header-includes:
