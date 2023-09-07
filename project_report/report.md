@@ -95,6 +95,11 @@ To test the application the python package `pytest` was used.
 
 The application is deployed in Heroku using Gunicorn with uvicorn workers. 
 
+## External services
+
+- To send automated emails we use [Mailgun](https://www.mailgun.com/) 
+- To verify passwords and emails breaches we use the [HaveIBeenPwned](https://haveibeenpwned.com/) API.
+
 ### Database
 
 Schema:
@@ -103,6 +108,10 @@ Schema:
 - **RevokedToken**(\underline{token}): JWT tokens used for authentication that have been revoked.
 
 It is important to recall that, that most user's information is encrypted, namely, the key's hash, the symmetric key encrypted and the vault, therefore they cannot be recovered (Zero-Knowledge Encryption).
+
+We also created a file named `routine.sql` in the backend repository containing requests to be made periodically such as 
+
+- Removing the unverified accounts
 
 ## Frontend
 
@@ -114,6 +123,8 @@ The frontend is a Single Page Application that interacts with the backend throug
 - TailwindCSS: the CSS framework to stylize the app, it is pretty much used by most modern websites.
 
 Once the application is built, the static web pages are served with netlify.
+
+\clearpage
 
 ## CI/CD Pipeline
 
@@ -142,11 +153,11 @@ We have 2 environments:
 
 To make this project we were heavily inspired by the security model of [Bitwarden](https://bitwarden.com/). We used their security whitepaper to build our application. 
 
-- Master Password: this is the password of the vault, this is where the user data protection begins. The overall security strength of the application greatly relies on it as it is the secret used to access the vault. 
+- Master Password: The password of the vault, it's where the user data protection begins. The overall security strength of the vault greatly relies on it as it is the secret used to access it. 
 - To strengthen the security we implemented a two-step login.
-- User Key: this is the symmetric encryption key used to encrypt and decrypt the vault. This key is encrypted using the _Master Key_ that is derived from the Master Password, no one except one that knows the master password can decrypt it. 
+- User Key: The symmetric encryption key used to encrypt and decrypt the vault. This key is encrypted using the _Master Key_ that is derived from the Master Password, no one except one that knows the master password can decrypt it. 
 
-Below a more schematic explanation on how we make sure that know one -- even us -- except the user can access their vault.
+Below a more detailed diagram on how we make sure that know one -- even us -- except the user can access their vault.
 
 ![Encryption Diagram and storage](figures/encryption-diagram.jpg)
 
@@ -221,7 +232,7 @@ You can find the formatted output **[here](https://github.com/Duck-Pass/web-clie
 - Source code : 
     - Web Client (frontend): [https://github.com/Duck-Pass/web-client](https://github.com/Duck-Pass/web-client)
     - Back-end application: [https://github.com/Duck-Pass/backend](https://github.com/Duck-Pass/backend)
-    - How to self-host the application : [https://github.com/Duck-Pass/self-host](https://github.com/Duck-Pass/self-host)
+    - How to self-host the application: [https://github.com/Duck-Pass/self-host](https://github.com/Duck-Pass/self-host)
 
 # References
 
