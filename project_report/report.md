@@ -142,7 +142,7 @@ We have 2 environments:
 - Backend: we use GitHub Actions, all tests are executed once a commit is pushed on the staging and main branches.
 - Frontend: we use Netlify by running the test command before deploying on the staging and main branches.
 
-### Continous Delivery
+### Continous Deployment
 
 - Backend: we use Heroku to automatically deploy our application on the staging / main environment when a commit is pushed onto these branches. The deployment is only done if the CI passed.
 - Frontend: we use Netlify to serve automatically the web pages on the staging / main environment when a commit is pushed. As well as the backend, the web app is deployed only if the CI passed.
