@@ -62,20 +62,24 @@ To achieve that, we based our security model (that will be further explained) on
 
 ## Functional requirements
 
+- Zero-knowledge of your vault
+- End-to-end encryption
 - Sign in
 - Sign up
 - Login
 - Account deletion
-- Indicator of the strength of the master password
+- Indicator of the strength of your passwords
 - User profile page to view and edit information
 - 2FA login
 - 2FA manager for other apps
-- Search logins
+- Search/filter passwords
 - Add username/password securely in the vault
 - Remove logins from the vault
 - Purge vault
 - Password generator
 - Integration of breached password search
+- Integration of breaches of your master email
+
 
 # Technology stack and architecture
 
@@ -142,7 +146,7 @@ We have 2 environments:
 - Backend: we use GitHub Actions, all tests are executed once a commit is pushed on the staging and main branches.
 - Frontend: we use Netlify by running the test command before deploying on the staging and main branches.
 
-### Continous Deployment
+### Continuous Deployment
 
 - Backend: we use Heroku to automatically deploy our application on the staging / main environment when a commit is pushed onto these branches. The deployment is only done if the CI passed.
 - Frontend: we use Netlify to serve automatically the web pages on the staging / main environment when a commit is pushed. As well as the backend, the web app is deployed only if the CI passed.
